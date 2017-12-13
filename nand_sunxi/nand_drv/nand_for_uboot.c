@@ -237,7 +237,7 @@ int NAND_PhyInit(void)
 	//modify ValidBlkRatio
     //NAND_SetValidBlkRatio(nand_good_blk_ratio);
 
-	printf("NB1 : nand phy init ok\n");
+	// printf("NB1 : nand phy init ok\n");
 	return(PHY_ChangeMode(1));
 }
 

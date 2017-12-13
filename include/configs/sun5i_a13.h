@@ -179,22 +179,22 @@
 #define CONFIG_CMD_SAVEENV
 
 #define CONFIG_EXTRA_ENV_SETTINGS \
-	"bootdelay=3\0" \
-	"bootcmd=run setargs boot_normal\0" \
-	"console=ttyS0,115200\0" \
-	"nand_root=/dev/nandb\0" \
 	"init=/init\0" \
-	"loglevel=8\0" \
-	"setargs=setenv bootargs console=${console} root=${nand_root} rootwait" \
-	"init=${init} loglevel=${loglevel}\0" \
-	"boot_normal=fatload nand 0 0x43000000 script.bin;fatload nand 0 0x48000000 linux/uImage;bootm 0x48000000\0"
-
+	"importbootenv=fatload nand 0 0x44000000 uEnv.txt; "\
+		"env import -t 0x44000000 1024\0" \
+	"nandargs=setenv bootargs console=${console} " \
+		"root=${root} " \
+		"${extraargs}\0" \
+	"nandboot= "\
+		"run importbootenv; " \
+		"run nandargs; " \
+		"fatload nand 0 0x43000000 script.bin; " \
+		"fatload nand 0 0x48000000 uimage; " \
+		"bootm 0x48000000\0"
 
 #define CONFIG_BOOTDELAY	1
 #define CONFIG_BOOTCOMMAND	\
-	"fatload nand 0 0x43000000 script.bin;" \
-	"fatload nand 0 0x48000000 linux/uImage;" \
-	"bootm 0x48000000"
+	"run nandboot;"
 
 #define CONFIG_SYS_BOOT_GET_CMDLINE
 #define CONFIG_AUTO_COMPLETE

@@ -348,6 +348,7 @@ struct __NandPhyInfoPar_t MicronNandTbl[] =
     { {0x2c, 0x68, 0x04, 0x4A, 0xff, 0xff, 0xff, 0xff }, 1,     8,     256,     4096,   0x0208,   950,    30,     2,     0,     0,   &PhysicArchiPara4 },   // MT29F32G08CBACA
     { {0x2c, 0x48, 0x04, 0x4A, 0xff, 0xff, 0xff, 0xff }, 1,     8,     256,     2048,   0x0208,   950,    30,     2,     0,     0,   &PhysicArchiPara4 },   // MT29F16G08CBACA
     { {0x2c, 0x48, 0x04, 0x46, 0xff, 0xff, 0xff, 0xff }, 1,     8,     256,     2048,   0x0208,   950,    30,     2,     0,     0,   &PhysicArchiPara4 },   // MT29F16G08CBABA
+	{ {0x2c, 0x64, 0x44, 0x4B, 0xa9, 0xff, 0xff, 0xff }, 1,    16,     256,     4096,   0x0788,   950,    30,     5, 0x400a01,  0,   &PhysicArchiPara4 },	// MT29F64G08CBABA
 	//-------------------------------------------------------------------------------------------------------------------------
     { {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff }, 0,     0,       0,        0,   0x0000,     0,     0,    0,     0,      0,      0              },   // NULL
 };
@@ -430,4 +431,3 @@ struct __NandPhyInfoPar_t DefaultNandTbl[] =
     //-----------------------------------------------------------------------------------------------------------------------
     { {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff }, 0,     0,       0,        0,   0x0000,     0,     0,     0,     0,    0,  &DefualtPhysicArchiPara }, //default
 };
-
