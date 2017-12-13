@@ -1426,7 +1426,7 @@ __u32 NAND_GetDiskSize(void)
     __u32 disksize;
 
     disksize = (SECTOR_CNT_OF_SINGLE_PAGE * PAGE_CNT_OF_PHY_BLK * BLOCK_CNT_OF_DIE * \
-            DIE_CNT_OF_CHIP * NandStorageInfo.ChipCnt * DATA_BLK_CNT_OF_ZONE * 512);
+            DIE_CNT_OF_CHIP * NandStorageInfo.ChipCnt / 1024 * DATA_BLK_CNT_OF_ZONE);
 
     return disksize;
 }

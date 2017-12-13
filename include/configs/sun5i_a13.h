@@ -179,7 +179,6 @@
 #define CONFIG_CMD_SAVEENV
 
 #define CONFIG_EXTRA_ENV_SETTINGS \
-	"init=/init\0" \
 	"importbootenv=fatload nand 0 0x44000000 uEnv.txt; "\
 		"env import -t 0x44000000 1024\0" \
 	"nandargs=setenv bootargs console=${console} " \
